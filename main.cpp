@@ -17,24 +17,9 @@ void output_full_information(BootSector_after current_boot_sector, FSInfo curren
     current_FSInfo.output_FSInfo();
 }
 
-void output_help()
-{
-    printf("For using this programm, please inter in folder with this programm.\n");
-    printf("Compile it: gcc -Wall -o main main.c\n");
-    printf("Then run it: sudo ./main \'Your device path\' -flags\n");
-    printf("Some flags:\n");
-    printf("   -h -> for output help\n");
-    printf("   -f -> for output full information about your device\n");
-    printf("If formating is correct, output will be empty\n");
-}
-
 void check_command(int argc, char const *argv[])
 {
     for (int i = 1; i < argc; i++){
-        if (argv[i][1] == 'h'){
-            output_help();
-            exit(0);
-        }
         if (argv[i][1] == 'f'){
             full_information = 1;
         }
