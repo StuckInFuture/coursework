@@ -101,8 +101,14 @@ public:
             check = 1;
         }
         _int1 NFC = this->number_FAT_copies; //NFC - number of fat copies
+                
         if (NFC != 2) {
-            printf("WARNING: number of FAT copies should be 2. Your device number of FAT copies: %d\n", NFC);
+            if (NFC < 1 || NFC > 4){
+                printf("ERROR: ");            
+            }else{
+                printf("WARNING: ");            
+            }
+            printf("number of FAT copies should be 2. Your device number of FAT copies: %d\n", NFC);
             check = 1;
         }
         if (this->signature_55AA != 0xAA55) {
